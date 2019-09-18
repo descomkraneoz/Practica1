@@ -17,8 +17,9 @@ public class HoraActivity extends AppCompatActivity {
         tvHora=findViewById(R.id.tvHora);
 
         String hora=getIntent().getStringExtra(EXTRA_HORA);
-        tvHora.setText(getResources().getString(R.string.hora)+" aqui va la hora "
-                +getResources().getString(R.string.nombre)+" aqui va el nombre");
+
+        tvHora.setText(getResources().getString(R.string.textoHora)+hora+" "
+                +getResources().getString(R.string.textoNombre)+" aqui va el nombre");
 
     }
 }

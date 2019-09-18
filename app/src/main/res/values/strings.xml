@@ -2,8 +2,9 @@
     <string name="app_name">Practica1</string>
     <string name="tvNombre">Escribe tu nombre</string>
     <string name="saludo">Hola</string>
-    <string name="hora">La hora a la que has pulsado el botón es </string>
-    <string name="nombre"> y mi nombre es </string>
+    <string name="textoHora">La hora a la que has pulsado el botón es </string>
+    <string name="textoNombre"> y mi nombre es </string>
+    <string name="formatoHora">HH:mm:ss</string>
 
 
 </resources>

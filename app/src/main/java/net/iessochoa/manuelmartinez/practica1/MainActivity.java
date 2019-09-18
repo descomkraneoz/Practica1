@@ -18,9 +18,6 @@ public class MainActivity extends AppCompatActivity {
     EditText etNombre;
     Button btAceptar;
     Button btHora;
-    DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-    Date date = new Date();
-    String fecha=""+dateFormat.format(date);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +32,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent= new Intent(MainActivity.this,SaludoActivity.class);
 
-                /*Bundle bundle=new Bundle();
-                bundle.putString("NOMBRE", etNombre.getText().toString());
-
-                intent.putExtras(bundle);*/
-
-                intent.putExtra(SaludoActivity.EXTRA_NOMBRE, etNombre.getText().toString()); //hace lo mismo que lo anterior pero en una linea
+                intent.putExtra(SaludoActivity.EXTRA_NOMBRE, etNombre.getText().toString());
 
                 startActivity(intent);
 
@@ -50,8 +42,12 @@ public class MainActivity extends AppCompatActivity {
         btHora.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                DateFormat dateFormat = new SimpleDateFormat(getResources().getString(R.string.formatoHora));
+                Date date = new Date();
+
                 Intent intentHora=new Intent(MainActivity.this,HoraActivity.class);
-                intentHora.putExtra(HoraActivity.EXTRA_HORA,etNombre.getText().toString());
+                intentHora.putExtra(HoraActivity.EXTRA_HORA,dateFormat.format(date));
+
                 startActivity(intentHora);
             }
         });
